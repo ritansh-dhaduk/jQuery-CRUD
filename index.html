@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+    <script src="jQuery.js"></script>
+    <link rel="stylesheet" href="style.css">
+    <title>Student Management</title>
+</head>
+<body>
+
+    <h1 style="text-align:center;font-size:xx-large;">Student Management</h1>
+    <div class="container" style="padding-bottom: 40px;">
+        <form id="form">
+                <div>
+                    <label class="col1" for="quantity">Roll No. : </label>
+                    <input type="number" id="rollNo" min="1" val="" autocomplete="off" oninput="validateField('namelocation1','rollNo')" onfocusout="validateField('namelocation1','rollNo')" /><br>
+                </div>
+                <span id="namelocation1" style="color:red;"></span>
+
+                <div>
+                    <label class="col1" for="name" >Name : </label>
+                    <input type="text" id="studentName" autocomplete="off" oninput="validateField('namelocation2','studentName')" onfocusout="validateField('namelocation2','studentName')" /><br>
+                </div>
+                <span id="namelocation2" style="color:red"></span>
+            
+                <div>
+                    <label class="col1" >Birth Date : </label>
+                    <input type="date" id="birthdate" oninput="validateField('namelocation3','birthdate')" onfocusout="validateField('namelocation3','birthdate')" /><br>
+                </div>
+                <span id="namelocation3" style="color:red"></span>
+                
+                <div>
+                    <label class="col1">Stdanderd : </label>
+                    <select id="stdanderd" oninput="validateField('namelocation4','stdanderd')" onfocusout="validateField('namelocation4','stdanderd')">
+                        <option value="">select</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                        <option value="6">6</option>
+                        <option value="7">7</option>
+                        <option value="8">8</option>
+                        <option value="9">9</option>
+                        <option value="10">10</option>
+                    </select><br>
+                </div>
+                <span id="namelocation4" style="color:red"></span>
+        
+                <button type="button" id="add" onclick="addData()">Submit</button>
+                <button type="button" id="reset" onclick="resetForm()">Reset</button>
+        </form>
+    </div>
+
+        <table id="studentList" style="width:80%;">
+            <thead>
+                <tr>
+                    <th>Roll No.</th>
+                    <th>Name</th>
+                    <th>Birthdate</th>
+                    <th>Std</th>
+                    <th>action</th>
+                </tr>
+            </thead>
+            <tbody id="listbody">
+                
+            </tbody>
+        </table>
+
+</body>
+</html>
